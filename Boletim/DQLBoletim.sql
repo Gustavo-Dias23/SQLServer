@@ -24,3 +24,17 @@ SELECT * FROM Aluno WHERE IdAluno > 1 AND IdAluno < 5;
 
 -- Selecionar dados entre valores específicos
 SELECT * FROM Trabalho WHERE DataEntrega BETWEEN '2020-08-05T00:00:00' AND '2020-08-15T23:00:00'
+
+
+/* JOINS */
+USE boletim
+
+SELECT
+	Aluno.Nome,
+	Materia.Titulo,
+	Trabalho.Nota
+
+FROM Trabalho
+	INNER JOIN Aluno ON Trabalho.IdAluno = Aluno.IdAluno
+	INNER JOIN Materia ON Trabalho.IdMateria = Materia.IdMateria
+;
