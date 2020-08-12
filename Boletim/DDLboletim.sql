@@ -33,3 +33,12 @@ CREATE TABLE trabalho (
 	IdAluno INT FOREIGN KEY REFERENCES aluno (IdAluno),
 	IdMateria INT FOREIGN KEY REFERENCES materia (IdMateria)
 );
+
+/* Incluida a coluna esquecida: DataEntrega */
+ALTER TABLE trabalho ADD DataEntrega DATETIME;
+
+/* Criada coluna de teste para excluí-la após */
+ALTER TABLE trabalho ADD teste INT
+
+-- Excluindo a coluna
+ALTER TABLE trabalho DROP COLUMN teste;
